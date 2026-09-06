@@ -215,36 +215,91 @@ ampeg_attack=.1 ampeg_release=.1
 // from Brass/AltoSax/altosax_legmode.sfz
 <control> default_path=$HOME/Brass/AltoSax/
 <master> amplitude_cc106=100
+ampeg_release=0.2 ampeg_attack=.05
 
-<group> ampeg_release=0.2 lovel=60 ampeg_attack=.05 // group=1 off_by=1 off_mode=normal
-// #include "S2.sfz"
-<region> hikey=c#3 pitch_keycenter=c3 sample=Sustain/3_C_f.wav offset=9895
-<region> lokey=d3 hikey=e3 pitch_keycenter=d#3 sample=Sustain/3_Eb_f.wav offset=9609
-<region> lokey=f3 hikey=g3 pitch_keycenter=f#3 sample=Sustain/3_Gb_f.wav offset=10482
-<region> lokey=g#3 hikey=a#3 pitch_keycenter=a3 sample=Sustain/3_A_f.wav offset=10836
-<region> lokey=b3 hikey=c#4 pitch_keycenter=c4 sample=Sustain/4_C_f.wav offset=8038
-<region> lokey=d4 hikey=e4 pitch_keycenter=d#4 sample=Sustain/4_Eb_f.wav offset=7944
-<region> lokey=f4 hikey=g4 pitch_keycenter=f#4 sample=Sustain/4_Gb_f.wav offset=11103
-<region> lokey=g#4 hikey=a#4 pitch_keycenter=a4 sample=Sustain/4_A_f.wav offset=11528
-<region> lokey=b4 hikey=c#5 pitch_keycenter=c5 sample=Sustain/5_C_f.wav offset=7978
-<region> lokey=d5 hikey=e5 pitch_keycenter=d#5 sample=Sustain/5_Eb_f.wav offset=10732
-<region> lokey=f5 hikey=g5 pitch_keycenter=f#5 sample=Sustain/5_Gb_f.wav offset=9920
-<region> lokey=g#5 pitch_keycenter=a5 sample=Sustain/5_A_f.wav offset=8307
+// Alto sax, plays one octave low
+<group> hicc107=63
+<region> lovel=60 hikey=c#4 pitch_keycenter=c4 sample=Sustain/3_C_f.wav offset=9895
+<region> lovel=60 lokey=d4 hikey=e4 pitch_keycenter=d#4 sample=Sustain/3_Eb_f.wav offset=9609
+<region> lovel=60 lokey=f4 hikey=g4 pitch_keycenter=f#4 sample=Sustain/3_Gb_f.wav offset=10482
+<region> lovel=60 lokey=g#4 hikey=a#4 pitch_keycenter=a4 sample=Sustain/3_A_f.wav offset=10836
+<region> lovel=60 lokey=b4 hikey=c#5 pitch_keycenter=c5 sample=Sustain/4_C_f.wav offset=8038
+<region> lovel=60 lokey=d5 hikey=e5 pitch_keycenter=d#5 sample=Sustain/4_Eb_f.wav offset=7944
+<region> lovel=60 lokey=f5 hikey=g5 pitch_keycenter=f#5 sample=Sustain/4_Gb_f.wav offset=11103
+<region> lovel=60 lokey=g#5 hikey=a#5 pitch_keycenter=a5 sample=Sustain/4_A_f.wav offset=11528
+<region> lovel=60 lokey=b5 hikey=c#6 pitch_keycenter=c6 sample=Sustain/5_C_f.wav offset=7978
+<region> lovel=60 lokey=d6 hikey=e6 pitch_keycenter=d#6 sample=Sustain/5_Eb_f.wav offset=10732
+<region> lovel=60 lokey=f6 hikey=g6 pitch_keycenter=f#6 sample=Sustain/5_Gb_f.wav offset=9920
+<region> lovel=60 lokey=g#6 pitch_keycenter=a6 sample=Sustain/5_A_f.wav offset=8307
 
-<group> ampeg_release=0.2 hivel=59 ampeg_attack=.05 // group=1 off_by=1 off_mode=normal
-// #include "S4.sfz"
-<region> hikey=c#3 pitch_keycenter=c3 sample=Sustain/3_C_p.wav offset=18102
-<region> lokey=d3 hikey=e3 pitch_keycenter=d#3 sample=Sustain/3_Eb_p.wav offset=14254
-<region> lokey=f3 hikey=g3 pitch_keycenter=f#3 sample=Sustain/3_Gb_p.wav offset=13037
-<region> lokey=g#3 hikey=a#3 pitch_keycenter=a3 sample=Sustain/3_A_p.wav offset=9718
-<region> lokey=b3 hikey=c#4 pitch_keycenter=c4 sample=Sustain/4_C_p.wav offset=9221
-<region> lokey=d4 hikey=e4 pitch_keycenter=d#4 sample=Sustain/4_Eb_p.wav offset=9947
-<region> lokey=f4 hikey=g4 pitch_keycenter=f#4 sample=Sustain/4_Gb_p.wav offset=9732
-<region> lokey=g#4 hikey=a#4 pitch_keycenter=g#4 sample=Sustain/4_A_p.wav offset=8759
-<region> lokey=b4 hikey=c#5 pitch_keycenter=c5 sample=Sustain/5_C_p.wav offset=11507
-<region> lokey=d5 hikey=e5 pitch_keycenter=d#5 sample=Sustain/5_Eb_p.wav offset=11757
-<region> lokey=f5 hikey=g5 pitch_keycenter=f#5 sample=Sustain/5_Gb_p.wav offset=11773
-<region> lokey=g#5 pitch_keycenter=a5 sample=Sustain/5_A_p.wav offset=8071
+<region> hivel=59 hikey=c#4 pitch_keycenter=c4 sample=Sustain/3_C_p.wav offset=18102
+<region> hivel=59 lokey=d4 hikey=e4 pitch_keycenter=d#4 sample=Sustain/3_Eb_p.wav offset=14254
+<region> hivel=59 lokey=f4 hikey=g4 pitch_keycenter=f#4 sample=Sustain/3_Gb_p.wav offset=13037
+<region> hivel=59 lokey=g#4 hikey=a#4 pitch_keycenter=a4 sample=Sustain/3_A_p.wav offset=9718
+<region> hivel=59 lokey=b4 hikey=c#5 pitch_keycenter=c5 sample=Sustain/4_C_p.wav offset=9221
+<region> hivel=59 lokey=d5 hikey=e5 pitch_keycenter=d#5 sample=Sustain/4_Eb_p.wav offset=9947
+<region> hivel=59 lokey=f5 hikey=g5 pitch_keycenter=f#5 sample=Sustain/4_Gb_p.wav offset=9732
+<region> hivel=59 lokey=g#5 hikey=a#5 pitch_keycenter=g#5 sample=Sustain/4_A_p.wav offset=8759
+<region> hivel=59 lokey=b5 hikey=c#6 pitch_keycenter=c6 sample=Sustain/5_C_p.wav offset=11507
+<region> hivel=59 lokey=d6 hikey=e6 pitch_keycenter=d#6 sample=Sustain/5_Eb_p.wav offset=11757
+<region> hivel=59 lokey=f6 hikey=g6 pitch_keycenter=f#6 sample=Sustain/5_Gb_p.wav offset=11773
+<region> hivel=59 lokey=g#6 pitch_keycenter=a6 sample=Sustain/5_A_p.wav offset=8071
+
+// Alto sax, no octave shift
+<group> locc107=64 hicc107=95
+<region> lovel=60 hikey=c#3 pitch_keycenter=c3 sample=Sustain/3_C_f.wav offset=9895
+<region> lovel=60 lokey=d3 hikey=e3 pitch_keycenter=d#3 sample=Sustain/3_Eb_f.wav offset=9609
+<region> lovel=60 lokey=f3 hikey=g3 pitch_keycenter=f#3 sample=Sustain/3_Gb_f.wav offset=10482
+<region> lovel=60 lokey=g#3 hikey=a#3 pitch_keycenter=a3 sample=Sustain/3_A_f.wav offset=10836
+<region> lovel=60 lokey=b3 hikey=c#4 pitch_keycenter=c4 sample=Sustain/4_C_f.wav offset=8038
+<region> lovel=60 lokey=d4 hikey=e4 pitch_keycenter=d#4 sample=Sustain/4_Eb_f.wav offset=7944
+<region> lovel=60 lokey=f4 hikey=g4 pitch_keycenter=f#4 sample=Sustain/4_Gb_f.wav offset=11103
+<region> lovel=60 lokey=g#4 hikey=a#4 pitch_keycenter=a4 sample=Sustain/4_A_f.wav offset=11528
+<region> lovel=60 lokey=b4 hikey=c#5 pitch_keycenter=c5 sample=Sustain/5_C_f.wav offset=7978
+<region> lovel=60 lokey=d5 hikey=e5 pitch_keycenter=d#5 sample=Sustain/5_Eb_f.wav offset=10732
+<region> lovel=60 lokey=f5 hikey=g5 pitch_keycenter=f#5 sample=Sustain/5_Gb_f.wav offset=9920
+<region> lovel=60 lokey=g#5 pitch_keycenter=a5 sample=Sustain/5_A_f.wav offset=8307
+
+<region> hivel=59 hikey=c#3 pitch_keycenter=c3 sample=Sustain/3_C_p.wav offset=18102
+<region> hivel=59 lokey=d3 hikey=e3 pitch_keycenter=d#3 sample=Sustain/3_Eb_p.wav offset=14254
+<region> hivel=59 lokey=f3 hikey=g3 pitch_keycenter=f#3 sample=Sustain/3_Gb_p.wav offset=13037
+<region> hivel=59 lokey=g#3 hikey=a#3 pitch_keycenter=a3 sample=Sustain/3_A_p.wav offset=9718
+<region> hivel=59 lokey=b3 hikey=c#4 pitch_keycenter=c4 sample=Sustain/4_C_p.wav offset=9221
+<region> hivel=59 lokey=d4 hikey=e4 pitch_keycenter=d#4 sample=Sustain/4_Eb_p.wav offset=9947
+<region> hivel=59 lokey=f4 hikey=g4 pitch_keycenter=f#4 sample=Sustain/4_Gb_p.wav offset=9732
+<region> hivel=59 lokey=g#4 hikey=a#4 pitch_keycenter=g#4 sample=Sustain/4_A_p.wav offset=8759
+<region> hivel=59 lokey=b4 hikey=c#5 pitch_keycenter=c5 sample=Sustain/5_C_p.wav offset=11507
+<region> hivel=59 lokey=d5 hikey=e5 pitch_keycenter=d#5 sample=Sustain/5_Eb_p.wav offset=11757
+<region> hivel=59 lokey=f5 hikey=g5 pitch_keycenter=f#5 sample=Sustain/5_Gb_p.wav offset=11773
+<region> hivel=59 lokey=g#5 pitch_keycenter=a5 sample=Sustain/5_A_p.wav offset=8071
+
+// Alto sax, plays one octave higher
+<group> locc107=96
+<region> lovel=60 hikey=c#2 pitch_keycenter=c2 sample=Sustain/3_C_f.wav offset=9895
+<region> lovel=60 lokey=d2 hikey=e2 pitch_keycenter=d#2 sample=Sustain/3_Eb_f.wav offset=9609
+<region> lovel=60 lokey=f2 hikey=g2 pitch_keycenter=f#2 sample=Sustain/3_Gb_f.wav offset=10482
+<region> lovel=60 lokey=g#2 hikey=a#2 pitch_keycenter=a2 sample=Sustain/3_A_f.wav offset=10836
+<region> lovel=60 lokey=b2 hikey=c#3 pitch_keycenter=c3 sample=Sustain/4_C_f.wav offset=8038
+<region> lovel=60 lokey=d3 hikey=e3 pitch_keycenter=d#3 sample=Sustain/4_Eb_f.wav offset=7944
+<region> lovel=60 lokey=f3 hikey=g3 pitch_keycenter=f#3 sample=Sustain/4_Gb_f.wav offset=11103
+<region> lovel=60 lokey=g#3 hikey=a#3 pitch_keycenter=a3 sample=Sustain/4_A_f.wav offset=11528
+<region> lovel=60 lokey=b3 hikey=c#4 pitch_keycenter=c4 sample=Sustain/5_C_f.wav offset=7978
+<region> lovel=60 lokey=d4 hikey=e4 pitch_keycenter=d#4 sample=Sustain/5_Eb_f.wav offset=10732
+<region> lovel=60 lokey=f4 hikey=g4 pitch_keycenter=f#4 sample=Sustain/5_Gb_f.wav offset=9920
+<region> lovel=60 lokey=g#4 pitch_keycenter=a4 sample=Sustain/5_A_f.wav offset=8307
+
+<region> hivel=59 hikey=c#2 pitch_keycenter=c2 sample=Sustain/3_C_p.wav offset=18102
+<region> hivel=59 lokey=d2 hikey=e2 pitch_keycenter=d#2 sample=Sustain/3_Eb_p.wav offset=14254
+<region> hivel=59 lokey=f2 hikey=g2 pitch_keycenter=f#2 sample=Sustain/3_Gb_p.wav offset=13037
+<region> hivel=59 lokey=g#2 hikey=a#2 pitch_keycenter=a2 sample=Sustain/3_A_p.wav offset=9718
+<region> hivel=59 lokey=b2 hikey=c#3 pitch_keycenter=c3 sample=Sustain/4_C_p.wav offset=9221
+<region> hivel=59 lokey=d3 hikey=e3 pitch_keycenter=d#3 sample=Sustain/4_Eb_p.wav offset=9947
+<region> hivel=59 lokey=f3 hikey=g3 pitch_keycenter=f#3 sample=Sustain/4_Gb_p.wav offset=9732
+<region> hivel=59 lokey=g#3 hikey=a#3 pitch_keycenter=g#3 sample=Sustain/4_A_p.wav offset=8759
+<region> hivel=59 lokey=b3 hikey=c#4 pitch_keycenter=c4 sample=Sustain/5_C_p.wav offset=11507
+<region> hivel=59 lokey=d4 hikey=e4 pitch_keycenter=d#4 sample=Sustain/5_Eb_p.wav offset=11757
+<region> hivel=59 lokey=f4 hikey=g4 pitch_keycenter=f#4 sample=Sustain/5_Gb_p.wav offset=11773
+<region> hivel=59 lokey=g#4 pitch_keycenter=a4 sample=Sustain/5_A_p.wav offset=8071
 
 // === Trumpet
 // from VSCO2/TrumpetSus.sfz
