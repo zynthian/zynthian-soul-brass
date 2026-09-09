@@ -4,37 +4,66 @@
 
 #define $HOME /zynthian/zynthian-data/soundfonts/sfz
 
+// Zynthian UI parsing doesn't understand #define
+// #define CC_TRO_VOL cc102 # trombone volume
+// #define CC_TRO_OCT cc103 # trombone octave shift
+// #define CC_TRO_PAN cc104 # trombone pan
+// #define CC_TSX_VOL cc105 # tenor sax volume
+// #define CC_TSX_OCT cc106 # tenor sax octave shift
+// #define CC_TSX_PAN cc107 # tenor sax pan
+// #define CC_ASX_VOL cc108 # alto sax volume
+// #define CC_ASX_OCT cc109 # alto sax octave shift
+// #define CC_ASX_PAN cc110 # alto sax pan
+// #define CC_TRU_VOL cc111 # trumpet volume
+// #define CC_TRU_OCT cc112 # trumpet octave shift
+// #define CC_TRU_PAN cc113 # trumpet pan
+
 <control>
+label_cc11=expression
+set_cc11=100
+
 label_cc102=trombone volume
 set_cc102=64
 label_cc103=trombone octave shift
 set_cc103=64
-label_cc104=tenor sax volume
+label_cc104=trombone pan
 set_cc104=64
-label_cc105=tenor sax octave shift
+
+label_cc105=tenor sax volume
 set_cc105=64
-label_cc106=alto sax volume
+label_cc106=tenor sax octave shift
 set_cc106=64
-label_cc107=alto sax octave shift
-set_cc107=64
-label_cc108=trumpet volume
-set_cc108=64
-label_cc109=trumpet octave shift
+label_cc107=tenor sax pan
+set_cc107=32
+
+label_cc108=alto sax volume
+CC_TRO_VOLset_cc108=64
+label_cc109=alto sax octave shift
 set_cc109=64
+label_cc110=alto sax pan
+set_cc110=96
+
+label_cc111=trumpet volume
+set_cc111=64
+label_cc112=trumpet octave shift
+set_cc112=64
+label_cc113=trumpet pan
+set_cc113=64
 
 
-// 0-25
-// 26-50
-// 50-75
-// 75-100
-// 100-127
+// octave shift CC value ranges
+// 0-25     -2
+// 26-50    -1
+// 50-75     0
+// 75-100   +1
+// 100-127  +2
 
 <global> volume=10
 
 // === Trombone
 // from VSCO2/TromboneSus.sfz
 <control> default_path=$HOME/VSCO2/Brass/Tenor Trombone/sus/
-<master> amplitude_cc102=100
+<master> amplitude_cc102=100 pan=-100 pan_oncc104=200
 master_volume=20
 ampeg_attack=0.001 ampeg_release=0.6 ampeg_dynamic=1
 
@@ -145,11 +174,11 @@ ampeg_attack=0.001 ampeg_release=0.6 ampeg_dynamic=1
 <control> default_path=$HOME/Brass/TenorSax/
 master_volume=-6
 
-<master> amplitude_cc104=100
+<master> amplitude_cc105=100 pan=-100 pan_oncc107=200
 ampeg_attack=.1 ampeg_release=.1
 
 // Tenor sax, plays one octave lower
-<group> hicc105=49
+<group> hicc106=49
 <region> sample=Vibrato/2_E_a.wav lovel=64 pitch_keycenter=e3 hikey=f#3 offset=25809
 <region> sample=Vibrato/2_A_a.wav lovel=64 pitch_keycenter=a3 lokey=g3 hikey=a#3 offset=11079
 <region> sample=Vibrato/3_C_a.wav lovel=64 pitch_keycenter=c4 lokey=b3 hikey=c#4 offset=9659
@@ -173,7 +202,7 @@ ampeg_attack=.1 ampeg_release=.1
 <region> sample=Vibrato/5_E_b.wav hivel=63 pitch_keycenter=e6 lokey=d6 offset=8477
 
 // Tenor sax, no octave shift
-<group> locc105=50 hicc105=74
+<group> locc106=50 hicc106=74
 <region> sample=Vibrato/2_E_a.wav lovel=64 pitch_keycenter=e2 hikey=f#2 offset=25809
 <region> sample=Vibrato/2_A_a.wav lovel=64 pitch_keycenter=a2 lokey=g2 hikey=a#2 offset=11079
 <region> sample=Vibrato/3_C_a.wav lovel=64 pitch_keycenter=c3 lokey=b2 hikey=c#3 offset=9659
@@ -197,7 +226,7 @@ ampeg_attack=.1 ampeg_release=.1
 <region> sample=Vibrato/5_E_b.wav hivel=63 pitch_keycenter=e5 lokey=d5 offset=8477
 
 // Tenor sax, plays one octave higher
-<group> locc105=75
+<group> locc106=75
 <region> sample=Vibrato/2_E_a.wav lovel=64 pitch_keycenter=e1 hikey=f#1 offset=25809
 <region> sample=Vibrato/2_A_a.wav lovel=64 pitch_keycenter=a1 lokey=g1 hikey=a#1 offset=11079
 <region> sample=Vibrato/3_C_a.wav lovel=64 pitch_keycenter=c2 lokey=b1 hikey=c#2 offset=9659
@@ -223,12 +252,12 @@ ampeg_attack=.1 ampeg_release=.1
 // === Alto Sax
 // from Brass/AltoSax/altosax_legmode.sfz
 <control> default_path=$HOME/Brass/AltoSax/
-<master> amplitude_cc106=100
+<master> amplitude_cc108=100 pan=-100 pan_oncc110=200
 ampeg_release=0.2 ampeg_attack=.05
 master_volume=-6
 
 // Alto sax, plays one octave low
-<group> hicc107=49
+<group> hicc109=49
 <region> lovel=60 hikey=c#4 pitch_keycenter=c4 sample=Sustain/3_C_f.wav offset=9895
 <region> lovel=60 lokey=d4 hikey=e4 pitch_keycenter=d#4 sample=Sustain/3_Eb_f.wav offset=9609
 <region> lovel=60 lokey=f4 hikey=g4 pitch_keycenter=f#4 sample=Sustain/3_Gb_f.wav offset=10482
@@ -256,7 +285,7 @@ master_volume=-6
 <region> hivel=59 lokey=g#6 pitch_keycenter=a6 sample=Sustain/5_A_p.wav offset=8071
 
 // Alto sax, no octave shift
-<group> locc107=50 hicc107=74
+<group> locc109=50 hicc109=74
 <region> lovel=60 hikey=c#3 pitch_keycenter=c3 sample=Sustain/3_C_f.wav offset=9895
 <region> lovel=60 lokey=d3 hikey=e3 pitch_keycenter=d#3 sample=Sustain/3_Eb_f.wav offset=9609
 <region> lovel=60 lokey=f3 hikey=g3 pitch_keycenter=f#3 sample=Sustain/3_Gb_f.wav offset=10482
@@ -284,7 +313,7 @@ master_volume=-6
 <region> hivel=59 lokey=g#5 pitch_keycenter=a5 sample=Sustain/5_A_p.wav offset=8071
 
 // Alto sax, plays one octave higher
-<group> locc107=75
+<group> locc109=75
 <region> lovel=60 hikey=c#2 pitch_keycenter=c2 sample=Sustain/3_C_f.wav offset=9895
 <region> lovel=60 lokey=d2 hikey=e2 pitch_keycenter=d#2 sample=Sustain/3_Eb_f.wav offset=9609
 <region> lovel=60 lokey=f2 hikey=g2 pitch_keycenter=f#2 sample=Sustain/3_Gb_f.wav offset=10482
@@ -314,12 +343,12 @@ master_volume=-6
 // === Trumpet
 // from VSCO2/TrumpetSus.sfz
 <control> default_path=$HOME/VSCO2/Brass/Trumpet/sus/
-<master> amplitude_cc108=100
+<master> amplitude_cc111=100 pan=-100 pan_oncc113=200
 ampeg_attack=0.001 ampeg_release=0.5 ampeg_dynamic=1
 master_volume=6
 
 // Trumpet, no octave shift
-<group> hicc109=75
+<group> hicc112=75
 <region> sample=Sum_SHTrumpet_sus_F2_v1_rr1.wav lokey=52 hikey=54 pitch_keycenter=53 lovel=0 hivel=62 volume=18
 <region> sample=Sum_SHTrumpet_sus_F2_v3_rr1.wav lokey=52 hikey=54 pitch_keycenter=53 lovel=63 hivel=127 volume=6
 <region> sample=Sum_SHTrumpet_sus_A2_v1_rr1.wav lokey=55 hikey=58 pitch_keycenter=57 lovel=0 hivel=62 volume=18
@@ -342,7 +371,7 @@ master_volume=6
 <region> sample=Sum_SHTrumpet_sus_C5_v3_rr1.wav lokey=83 hikey=84 pitch_keycenter=84 lovel=63 hivel=127 volume=6
 
 // Trumpet, plays one octave higher
-<group> locc109=75 hicc109=99
+<group> locc112=75 hicc112=99
 <region> sample=Sum_SHTrumpet_sus_F2_v1_rr1.wav lokey=40 hikey=42 pitch_keycenter=41 lovel=0 hivel=62 volume=18
 <region> sample=Sum_SHTrumpet_sus_F2_v3_rr1.wav lokey=40 hikey=42 pitch_keycenter=41 lovel=63 hivel=127 volume=6
 <region> sample=Sum_SHTrumpet_sus_A2_v1_rr1.wav lokey=43 hikey=46 pitch_keycenter=45 lovel=0 hivel=62 volume=18
@@ -365,7 +394,7 @@ master_volume=6
 <region> sample=Sum_SHTrumpet_sus_C5_v3_rr1.wav lokey=71 hikey=72 pitch_keycenter=72 lovel=63 hivel=127 volume=6
 
 // Trumpet, plays two octaves higher
-<group> locc109=100
+<group> locc112=100
 <region> sample=Sum_SHTrumpet_sus_F2_v1_rr1.wav lokey=28 hikey=30 pitch_keycenter=29 lovel=0 hivel=62 volume=18
 <region> sample=Sum_SHTrumpet_sus_F2_v3_rr1.wav lokey=28 hikey=30 pitch_keycenter=29 lovel=63 hivel=127 volume=6
 <region> sample=Sum_SHTrumpet_sus_A2_v1_rr1.wav lokey=31 hikey=34 pitch_keycenter=33 lovel=0 hivel=62 volume=18
