@@ -8,12 +8,18 @@ Each note plays up to four instruments:
 - alto sax
 - trumpet
 
-Each instrument has volume and octave shift CC control.
-By default, all instruments play at the same volume,
-with no octave shift.
+## Controls
 
-This sfz uses samples from other packages. Required packages:
+Each instrument has CC control for
+- volume
+- octave shift
+- pan
+By default, all instruments play at the same volume,
+with no octave shift.  Trombone and trumpet are centered,
+saxes are panned left and right 45 degrees.
+
+## REQUIRED PACKAGES
+
+This repo includes no audio samples.  It uses samples from these packages:
 - Zynthian Factory SFZ's
 - VSCO2
-
-Image: By Shein from Jersey City, USA - Earth, Wind, and Fire, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=5194719
