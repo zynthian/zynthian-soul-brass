@@ -1,0 +1,79 @@
+
+controllers:
+ Main:
+  volume:
+   midi_cc: 7
+   value: 96
+   name: "Volume"
+  pan:
+   midi_cc: 10
+   value: 64
+   name: "Pan"
+  expression:
+   midi_cc: 11
+   value: 64
+   name: "Pan"
+
+ Trombone:
+  trombone_volume:
+   midi_cc: 102
+   value: 64
+   name: "Trombone Volume"
+  trombone_octave:
+   midi_cc: 103
+   value: 64
+   name: "Trombone Octave"
+   labels: ["-2", "-1", "0", "+1", "+2"]
+   ticks: [0, 32, 64, 96, 127]
+  trombone_pan:
+   midi_cc: 104
+   value: 64
+   name: "Trombone Pan"
+
+ TenorSax:
+  tenorsax_volume:
+   midi_cc: 105
+   value: 64
+   name: "TenorSax Volume"
+  tenorsax_octave:
+   midi_cc: 106
+   value: 64
+   name: "TenorSax Octave"
+   labels: ["-2", "-1", "0", "+1", "+2"]
+   ticks: [0, 32, 64, 96, 127]
+  tenorsax_pan:
+   midi_cc: 107
+   value: 64
+   name: "TenorSax Pan"
+
+ AltoSax:
+  altosax_volume:
+   midi_cc: 108
+   value: 64
+   name: "AltoSax Volume"
+  altosax_octave:
+   midi_cc: 109
+   value: 64
+   name: "AltoSax Octave"
+   labels: ["-2", "-1", "0", "+1", "+2"]
+   ticks: [0, 32, 64, 96, 127]
+  altosax_pan:
+   midi_cc: 110
+   value: 64
+   name: "AltoSax Pan"
+
+ Trumpet:
+  trumpet_volume:
+   midi_cc: 111
+   value: 64
+   name: "Trumpet Volume"
+  trumpet_octave:
+   midi_cc: 112
+   value: 64
+   name: "Trumpet Octave"
+   labels: ["-2", "-1", "0", "+1", "+2"]
+   ticks: [0, 32, 64, 96, 127]
+  trumpet_pan:
+   midi_cc: 113
+   value: 64
+   name: "Trumpet Pan"
